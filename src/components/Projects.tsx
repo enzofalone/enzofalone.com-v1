@@ -5,7 +5,7 @@ type Props = {}
 
 function Projects({}: Props) {
   return (
-    <Flex w={"100vw"} h={"600px"} id={'projects'} bgColor={theme.colors.section3}>
+    <Flex w={"100vw"} h={"600px"} id={'projects'} zIndex={'2'} mt={'-1px'} bgColor={theme.colors.section3}>
       <Container h={'600px'}>hello world</Container>
     </Flex>
   )

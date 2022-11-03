@@ -14,7 +14,6 @@ import { Hero } from "../components/Hero";
 import { Container } from "../components/Container";
 import { Main } from "../components/Main";
 import { Navbar } from "../components/Navbar";
-import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 import About from "../components/About";
 import theme from "../theme";
@@ -34,9 +33,8 @@ const Index = () => (
     <Image transform={{base: 'rotate(180deg)'}} w={"100vw"} h={'100%'} src="/first_wave1.svg" bgColor={theme.colors.section3}/>
     <Projects/>
     <Footer>
-      <Text>Next ❤️ Chakra</Text>
+      <Text>Footer</Text>
     </Footer>
-    {/* <CTA /> */}
   </Flex>
 );
 
