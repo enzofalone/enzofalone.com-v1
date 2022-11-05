@@ -10,7 +10,7 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        bg: mode("#2B2D42",'#2B2D42')(props),
+        bg: mode("#2B2D42", "#2B2D42")(props),
       },
     }),
   },
@@ -43,6 +43,7 @@ const theme = extendTheme({
   },
   colors: {
     black: "#16161D",
+    sectionBackground: "#161629",
     section1: "#2B2D42",
     section2: "#22223B",
     section3: "#422780",
