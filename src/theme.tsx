@@ -49,7 +49,7 @@ const theme = extendTheme({
     section3: "#422780",
   },
   spacing: {
-    main: [2, 5, 20, "15vw"],
+    main: [2, 5, 5, "15vw"],
   },
   fonts,
   breakpoints: {

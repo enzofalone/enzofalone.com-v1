@@ -48,6 +48,7 @@ export const Navbar = () => {
           <Hide below={"md"}>
             <Flex
             // mr={4}
+            gap={4}
             >
               <NavbarElement title={"Home"} />
               <NavbarElement title={"About"} />

@@ -17,7 +17,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { Footer } from "../components/Footer";
 import About from "../components/About";
 import theme from "../theme";
-import Projects from "../components/Projects";
+import Projects from "../components/Project/Projects";
 
 import { useEffect, useState } from "react";
 
@@ -57,6 +57,8 @@ const Index = () => {
         transform={{ base: "rotate(180deg)" }}
         w={"100vw"}
         h={"100%"}
+        zIndex={0}
+        my={-1}
         src="/first_wave1.svg"
         bgColor={theme.colors.section3}
       />

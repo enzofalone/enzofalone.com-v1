@@ -14,8 +14,8 @@ export const NavbarElement = ({ title }: NavbarItem) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       href={"/"}
+      fontSize={'xl'}
       onClick={(e) => scrollIntoSection(e, title)}
-      marginEnd={3}
     >
       {title}
     </ChakraLink>

@@ -10,6 +10,7 @@ import {
   Image as ChakraImage,
   HStack,
   Tooltip,
+  CircularProgress,
 } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import theme from "../theme";
@@ -27,8 +28,8 @@ export const Hero = () => {
       <Flex
         as={motion.div}
         initial={{ opacity: 0, y: -300 }}
-        animate={{ opacity: 1, y: 0}}
-        
+        animate={{ opacity: 1, y: 0 }}
+        mt={10}
         bgColor={theme.colors.section1}
         px={theme.spacing.main}
         w={"100%"}
@@ -117,6 +118,7 @@ export const Hero = () => {
         </Flex>
         {/* My face or weird image (or both) */}
         <ChakraImage
+          fallback={<CircularProgress isIndeterminate color="blue.300" />}
           src="https://avatars.githubusercontent.com/u/20959424?v=4"
           w={["250px", "300px", "350px", "400px"]}
           h={["300px", "350px", "400px", "450px"]}
