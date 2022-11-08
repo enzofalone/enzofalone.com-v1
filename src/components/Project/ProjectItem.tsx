@@ -29,7 +29,7 @@ function ProjectItem({ data }: Props) {
           <Box
             display={"flex"}
             flex={"1"}
-            flexDir={"row"}
+            flexDir={["column","row"]}
             alignItems={"center"}
             textAlign="left"
             gap={"1rem"}
