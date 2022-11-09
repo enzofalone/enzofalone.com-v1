@@ -36,7 +36,7 @@ export const Navbar = () => {
         initial={{ opacity: 0, y: -300 }}
         animate={{ opacity: 1, y: 0 }}
         w="100%"
-        px={[2, 5, 20, "15vw"]}
+        px={['40px', '20px', 20, "15vw"]}
         py="5"
         align="center"
         justify="space-between"
@@ -58,6 +58,7 @@ export const Navbar = () => {
           </Hide>
 
           <Hide above={"md"}>
+            {/* mobile */}
             <Menu>
               <MenuButton
                 ml={4}
@@ -74,6 +75,8 @@ export const Navbar = () => {
               </MenuButton>
               <MenuList>
                 <MenuItem
+                  as={"a"}
+                  href={"/"}
                   onClick={(e) => {
                     scrollIntoSection(e, "home");
                   }}

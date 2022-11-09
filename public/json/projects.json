@@ -3,7 +3,7 @@
     {
       "name": "autolog",
       "description": "inventory management system aimed for small autoshop business owners who use pen and paper to offer them a solution that features the creation of multiple inventories with the ability to add members, roles, inventory items, create invoices within a simple UI",
-      "learned": "This project was my final project for CodePath's Summer Internship for Technical Excellence and within the five weeks we had, I learned the importance of quality leadership and management skills, and in the technical side, the ability to create modular and abstract systems that can be shaped even further along development",
+      "learned": "This was final project for CodePath's Summer Internship for Technical Excellence and within the five weeks we had, I had to group all the technologies and fundamentals learned within the first five weeks to also combine it with leadership and management skills. In the technical side, I learned how to create and design abstract systems that can be shaped even further along development",
       "technologies": [
         "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white",
         "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",

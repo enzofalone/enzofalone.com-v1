@@ -2,17 +2,16 @@ import {
   AccordionItem,
   Text,
   AccordionButton,
-  Img,
   AccordionIcon,
   AccordionPanel,
   Box,
   Flex,
   Heading,
   CircularProgress,
-  Image,
+  Image as ChakraImage,
   Button,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import lodash from "lodash";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { animate, AnimatePresence, motion } from "framer-motion";
@@ -21,6 +20,27 @@ type Props = { data };
 
 function ProjectItem({ data }: Props) {
   const [selectedImage, setSelectedImage] = useState(0);
+  const [imgsLoaded, setImgsLoaded] = useState(false);
+
+  useEffect(() => {
+    const loadImage = (image) => {
+      return new Promise((resolve, reject) => {
+        const loadImg = new Image();
+        loadImg.src = image;
+        // wait 2 seconds to simulate loading time
+        loadImg.onload = () =>
+          setTimeout(() => {
+            resolve(image);
+          }, 2000);
+
+        loadImg.onerror = (err) => reject(err);
+      });
+    };
+
+    Promise.all(data.images.map((image) => loadImage(image)))
+      .then(() => setImgsLoaded(true))
+      .catch((err) => console.log("Failed to load images", err));
+  }, []);
 
   return (
     <AccordionItem p={"20px"}>
@@ -29,19 +49,19 @@ function ProjectItem({ data }: Props) {
           <Box
             display={"flex"}
             flex={"1"}
-            flexDir={["column","row"]}
+            flexDir={["column", "row"]}
             alignItems={"center"}
             textAlign="left"
             gap={"1rem"}
           >
-            <Img w={"300px"} src={data.images[0]} />{" "}
+            <ChakraImage w={"300px"} src={data.images[0]} />{" "}
             <Flex flexDir={"column"} h={"100%"}>
               <Text fontSize={["2rem", "2.5rem", "3rem"]}>
                 {lodash.upperFirst(data.name)}
               </Text>
               <Flex wrap={"wrap"} gap={"10px"} mt={"10px"} w={"100%"}>
                 {data.technologies.map((element, idx) => {
-                  return <Img src={element} />;
+                  return <ChakraImage src={element} />;
                 })}
               </Flex>
             </Flex>
@@ -71,18 +91,23 @@ function ProjectItem({ data }: Props) {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Flex overflow={'hidden'}>
+          <Flex overflow={"hidden"} w={'100%'} h={'100%'} alignItems={'center'} justifyContent={'center'}>
             <AnimatePresence>
-              <motion.img
+              {imgsLoaded ?
+              <ChakraImage
                 key={selectedImage}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                fallback={<CircularProgress isIndeterminate color='blue.300' />}
+                // initial={{ opacity: 0 }}
+                // animate={{ opacity: 1 }}
+                // exit={{ opacity: 0 }}
                 src={data.images[selectedImage]}
                 width={"100%"}
                 height={"100%"}
-              />
+              />: <CircularProgress isIndeterminate color='blue.300' />}
             </AnimatePresence>
+          </Flex>
+          <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
+            {selectedImage+1} of {data.images.length}
           </Flex>
           <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
             <Button
