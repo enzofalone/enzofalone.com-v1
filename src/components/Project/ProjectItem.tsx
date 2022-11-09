@@ -14,9 +14,10 @@ import {
 import React, { useEffect, useState } from "react";
 import lodash from "lodash";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import { animate, AnimatePresence, motion } from "framer-motion";
 
 type Props = { data };
+
+// TODO: add links that are stored in projects.json
 
 function ProjectItem({ data }: Props) {
   const [selectedImage, setSelectedImage] = useState(0);
@@ -46,19 +47,27 @@ function ProjectItem({ data }: Props) {
     <AccordionItem p={"20px"}>
       {AccordionHeader(data)}
       {/* Description section */}
-      <AccordionPanel pb={4}>
-        <Heading fontSize={"2rem"} mb={"10px"}>
-          Description
-        </Heading>
-        {lodash.upperFirst(data.description)}
-      </AccordionPanel>
+      {data.description ? (
+        <AccordionPanel pb={4}>
+          <Heading fontSize={"2rem"} mb={"10px"}>
+            Description
+          </Heading>
+          {lodash.upperFirst(data.description)}
+        </AccordionPanel>
+      ) : (
+        <></>
+      )}
       {/* What I learned section */}
-      <AccordionPanel pb={4}>
-        <Heading fontSize={"2rem"} mb={"10px"}>
-          What I learned
-        </Heading>
-        {lodash.upperFirst(data.learned)}
-      </AccordionPanel>
+      {data.learned ? (
+        <AccordionPanel pb={4}>
+          <Heading fontSize={"2rem"} mb={"10px"}>
+            What I learned
+          </Heading>
+          {lodash.upperFirst(data.learned)}
+        </AccordionPanel>
+      ) : (
+        <></>
+      )}
       {/* Screenshot gallery */}
       <AccordionPanel pb={4}>
         <Heading fontSize={"2rem"} mb={"10px"}>
@@ -83,7 +92,7 @@ function AccordionHeader(data: any) {
           textAlign="left"
           gap={"1rem"}
         >
-          <ChakraImage w={"300px"} src={data.images[0]} />{" "}
+          <ChakraImage maxW={"300px"} maxH={"200px"} src={data.images[0]} />{" "}
           <Flex flexDir={"column"} h={"100%"}>
             <Text fontSize={["2rem", "2.5rem", "3rem"]}>
               {lodash.upperFirst(data.name)}
@@ -110,35 +119,41 @@ function Gallery(
   return (
     <Flex flexDir={"column"} alignItems={"center"} justifyContent={"center"}>
       {ScreenshotGallery(imgsLoaded, selectedImage, data)}
-      <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
-        {selectedImage + 1} of {data.images.length}
-      </Flex>
-      <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
-        <Button
-          leftIcon={<ArrowBackIcon />}
-          colorScheme="teal"
-          variant="outline"
-          onClick={(e) =>
-            setSelectedImage((prev) =>
-              prev - 1 < 0 ? data.images.length - 1 : prev - 1
-            )
-          }
-        >
-          Previous
-        </Button>
-        <Button
-          rightIcon={<ArrowForwardIcon />}
-          colorScheme="teal"
-          variant="outline"
-          onClick={(e) =>
-            setSelectedImage((prev) =>
-              prev + 1 > data.images.length - 1 ? 0 : prev + 1
-            )
-          }
-        >
-          Next
-        </Button>
-      </Flex>
+      {data.images.length > 1 ? (
+        <>
+          <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
+            {selectedImage + 1} of {data.images.length}
+          </Flex>
+          <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
+            <Button
+              leftIcon={<ArrowBackIcon />}
+              colorScheme="teal"
+              variant="outline"
+              onClick={(e) =>
+                setSelectedImage((prev) =>
+                  prev - 1 < 0 ? data.images.length - 1 : prev - 1
+                )
+              }
+            >
+              Previous
+            </Button>
+            <Button
+              rightIcon={<ArrowForwardIcon />}
+              colorScheme="teal"
+              variant="outline"
+              onClick={(e) =>
+                setSelectedImage((prev) =>
+                  prev + 1 > data.images.length - 1 ? 0 : prev + 1
+                )
+              }
+            >
+              Next
+            </Button>
+          </Flex>{" "}
+        </>
+      ) : (
+        <></>
+      )}
     </Flex>
   );
 }
@@ -156,19 +171,15 @@ function ScreenshotGallery(
       alignItems={"center"}
       justifyContent={"center"}
     >
-      <AnimatePresence>
-        {imgsLoaded ? (
-          <ChakraImage
-            key={selectedImage}
-            fallback={<CircularProgress isIndeterminate color="blue.300" />}
-            src={data.images[selectedImage]}
-            width={"100%"}
-            height={"100%"}
-          />
-        ) : (
-          <CircularProgress isIndeterminate color="blue.300" />
-        )}
-      </AnimatePresence>
+      {imgsLoaded ? (
+        <ChakraImage
+          key={selectedImage}
+          fallback={<CircularProgress isIndeterminate color="blue.300" />}
+          src={data.images[selectedImage]}
+        />
+      ) : (
+        <CircularProgress isIndeterminate color="blue.300" />
+      )}
     </Flex>
   );
 }

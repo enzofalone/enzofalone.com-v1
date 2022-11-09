@@ -4,6 +4,9 @@
       "name": "autolog",
       "description": "inventory management system aimed for small autoshop business owners who use pen and paper to offer them a solution that features the creation of multiple inventories with the ability to add members, roles, inventory items, create invoices within a simple UI",
       "learned": "This was final project for CodePath's Summer Internship for Technical Excellence and within the five weeks we had, I had to group all the technologies and fundamentals learned within the first five weeks to also combine it with leadership and management skills. In the technical side, I learned how to create and design abstract systems that can be shaped even further along development",
+      "links": {
+        "github": "https://github.com/trillion-dollar-baby/autolog"
+      },
       "technologies": [
         "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white",
         "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -19,9 +22,11 @@
       ]
     },
     {
-      "name": "autolog",
-      "description": "inventory management system aimed for small autoshop business owners who use pen and paper to offer them a solution that features the creation of multiple inventories with the ability to add members, roles, inventory items, create invoices within a simple UI",
-      "learned": "This project was my final project for CodePath's Summer Internship for Technical Excellence and within the five weeks we had, I learned the importance of quality leadership and management skills, being ready for any obstacles and the importance of not just building a software but a team. We had to create components and API endpoints suitable for all different edge cases assessed by industry mentors.",
+      "name": "Lifetracker",
+      "description": "In this 3-day project assigned in CodePath's Summer Internship For Technical Excellence, after learning all of these technologies in five weeks, we had to create this application where users could track their calories, exercise and sleep",
+      "links": {
+        "github": "https://github.com/enzofalone/lifetracker"
+      },
       "technologies": [
         "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white",
         "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -30,34 +35,29 @@
         "https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white"
       ],
       "images": [
-        "https://drive.google.com/uc?export=view&id=1BFlkKl_hHv1brFWMfthJ8uGiHW2H8EYT",
-        "https://drive.google.com/uc?export=view&id=13ftMfCwS_kDAQ8z1X2s81cNgRYzkifCr",
-        "https://drive.google.com/uc?export=view&id=1sbbpMOYKYGwCYQqL1jkp3ZUgYoQ8W6W-",
-        "https://drive.google.com/uc?export=view&id=1QQzZFyDVG6e4et5atHwRVNK72foTwktJ"
+        "https://raw.githubusercontent.com/enzofalone/lifetracker/main/week5.gif"
       ]
     },
     {
-      "name": "autolog",
-      "description": "inventory management system aimed for small autoshop business owners who use pen and paper to offer them a solution that features the creation of multiple inventories with the ability to add members, roles, inventory items, create invoices within a simple UI",
-      "learned": "This project was my final project for CodePath's Summer Internship for Technical Excellence and within the five weeks we had, I learned the importance of quality leadership and management skills, being ready for any obstacles and the importance of not just building a software but a team. We had to create components and API endpoints suitable for all different edge cases assessed by industry mentors.",
+      "name": "EnzoGram",
+      "links": {
+        "github": "https://github.com/enzofalone/EnzoGram"
+      },
+      "description": "Instagram Clone made during CodePath's remote android course joining all the different features that we did learn throughout the course. I did also use Parse SDK and Back4App to feature persistent data and the creation of multiple users/posts with different properties",
       "technologies": [
-        "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white",
-        "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
-        "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB",
-        "https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white",
-        "https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white"
+        "https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white",
+        "https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"
       ],
       "images": [
-        "https://drive.google.com/uc?export=view&id=1BFlkKl_hHv1brFWMfthJ8uGiHW2H8EYT",
-        "https://drive.google.com/uc?export=view&id=13ftMfCwS_kDAQ8z1X2s81cNgRYzkifCr",
-        "https://drive.google.com/uc?export=view&id=1sbbpMOYKYGwCYQqL1jkp3ZUgYoQ8W6W",
-        "https://drive.google.com/uc?export=view&id=1QQzZFyDVG6e4et5atHwRVNK72foTwktJ"
+        "https://github.com/enzofalone/EnzoGram/blob/main/enzogrampreview3.gif?raw=true"
       ]
     },
     {
-      "name": "autolog",
-      "description": "inventory management system aimed for small autoshop business owners who use pen and paper to offer them a solution that features the creation of multiple inventories with the ability to add members, roles, inventory items, create invoices within a simple UI",
-      "learned": "This project was my final project for CodePath's Summer Internship for Technical Excellence and within the five weeks we had, I learned the importance of quality leadership and management skills, being ready for any obstacles and the importance of not just building a software but a team. We had to create components and API endpoints suitable for all different edge cases assessed by industry mentors.",
+      "name": "Student Store",
+      "links": {
+        "github": "https://github.com/enzofalone/student-store"
+      },
+      "description": "Mock-up student store that features API calls using Axios, the ability to click on every product for detailed information and check out section with information about total price + taxes",
       "technologies": [
         "https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white",
         "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
@@ -66,10 +66,20 @@
         "https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white"
       ],
       "images": [
-        "https://drive.google.com/uc?export=view&id=1BFlkKl_hHv1brFWMfthJ8uGiHW2H8EYT",
-        "https://drive.google.com/uc?export=view&id=13ftMfCwS_kDAQ8z1X2s81cNgRYzkifCr",
-        "https://drive.google.com/uc?export=view&id=1sbbpMOYKYGwCYQqL1jkp3ZUgYoQ8W6W",
-        "https://drive.google.com/uc?export=view&id=1QQzZFyDVG6e4et5atHwRVNK72foTwktJ"
+        "https://github.com/enzofalone/tdd-student-store-starter/raw/main/week3_2.gif?raw=true"
+      ]
+    },
+    {
+      "name": "Memory Game",
+      "links": {
+        "github": "https://github.com/enzofalone/memory-game"
+      },
+      "description": "Little game I did for prework application for CodePath's Summer Internship for Technical Excellence. This memory game has several features such as strikes, a timer, custom sounds, images",
+      "technologies": [
+        "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+      ],
+      "images": [
+        "https://github.com/enzofalone/memory-game/raw/main/memorygamev2.gif"
       ]
     }
   ]

@@ -26,7 +26,7 @@ function ProjectList({}: Props) {
       py={'30px'}
       px={['20px','30px','40px']}
     >
-      <Accordion defaultIndex={[0]}>
+      <Accordion defaultIndex={[0]} allowMultiple>
         {projectsJson.projects.map((element, idx) => {
           return <ProjectItem key={idx} data={element} />;
         })}
