@@ -21,27 +21,7 @@ type Props = { data };
 
 function ProjectItem({ data }: Props) {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [imgsLoaded, setImgsLoaded] = useState(false);
-
-  useEffect(() => {
-    const loadImage = (image) => {
-      return new Promise((resolve, reject) => {
-        const loadImg = new Image();
-        loadImg.src = image;
-        // wait 2 seconds to simulate loading time
-        loadImg.onload = () =>
-          setTimeout(() => {
-            resolve(image);
-          }, 2000);
-
-        loadImg.onerror = (err) => reject(err);
-      });
-    };
-
-    Promise.all(data.images.map((image) => loadImage(image)))
-      .then(() => setImgsLoaded(true))
-      .catch((err) => console.log("Failed to load images", err));
-  }, []);
+  const [imgsLoaded, setImgsLoaded] = useState(true);
 
   return (
     <AccordionItem p={"20px"}>
@@ -94,7 +74,7 @@ function AccordionHeader(data: any) {
         >
           <ChakraImage maxW={"300px"} maxH={"200px"} src={data.images[0]} />{" "}
           <Flex flexDir={"column"} h={"100%"}>
-            <Text fontSize={["2rem", "2.5rem", "3rem"]}>
+            <Text fontSize={["1rem", "1.5rem", "2rem"]}>
               {lodash.upperFirst(data.name)}
             </Text>
             <Flex wrap={"wrap"} gap={"10px"} mt={"10px"} w={"100%"}>
@@ -117,8 +97,27 @@ function Gallery(
   setSelectedImage: React.Dispatch<React.SetStateAction<number>>
 ) {
   return (
+    // Images
     <Flex flexDir={"column"} alignItems={"center"} justifyContent={"center"}>
-      {ScreenshotGallery(imgsLoaded, selectedImage, data)}
+      <Flex
+        overflow={"hidden"}
+        w={"100%"}
+        h={"100%"}
+        alignItems={"center"}
+        justifyContent={"center"}
+      >
+        {imgsLoaded ? (
+          <ChakraImage
+            loading={"lazy"}
+            key={selectedImage}
+            fallback={<CircularProgress isIndeterminate color="blue.300" />}
+            src={data.images[selectedImage]}
+          />
+        ) : (
+          <CircularProgress isIndeterminate color="blue.300" />
+        )}
+      </Flex>
+      {/* Previous/Next buttons */}
       {data.images.length > 1 ? (
         <>
           <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
@@ -157,31 +156,4 @@ function Gallery(
     </Flex>
   );
 }
-
-function ScreenshotGallery(
-  imgsLoaded: boolean,
-  selectedImage: number,
-  data: any
-) {
-  return (
-    <Flex
-      overflow={"hidden"}
-      w={"100%"}
-      h={"100%"}
-      alignItems={"center"}
-      justifyContent={"center"}
-    >
-      {imgsLoaded ? (
-        <ChakraImage
-          key={selectedImage}
-          fallback={<CircularProgress isIndeterminate color="blue.300" />}
-          src={data.images[selectedImage]}
-        />
-      ) : (
-        <CircularProgress isIndeterminate color="blue.300" />
-      )}
-    </Flex>
-  );
-}
-
 export default ProjectItem;

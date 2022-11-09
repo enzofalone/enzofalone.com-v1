@@ -33,7 +33,7 @@ export default function About({}: Props) {
           borderRadius={"20px"}
         >
           <Flex>
-            <Heading fontSize={["3rem", "4rem", "5rem"]}>
+            <Heading fontSize={["2rem", "3rem", "4rem"]}>
               About
               <br />
               Me
@@ -41,13 +41,13 @@ export default function About({}: Props) {
           </Flex>
           <Divider my={10} />
           <Flex flexDir={"column"}>
-            <Text fontSize={"2xl"}>
+            <Text fontSize={"xl"}>
               My name is Enzo Falone and I was born in Venezuela. I came to the
               United States in 2017 to begin a new life and pursue my passion of
               being a Software Engineer!
             </Text>
             <br />
-            <Text fontSize={"2xl"}>
+            <Text fontSize={"xl"}>
               My passion is to help individuals and communities to gain
               knowledge or succeed in their daily lives with tools I developed
               with my software engineering skills. Writing readable, scalable,
@@ -55,7 +55,7 @@ export default function About({}: Props) {
               of it is one of my primary objectives as a software engineer!
             </Text>
             <br />
-            <Text fontSize={"2xl"}>
+            <Text fontSize={"xl"}>
               My hobbies include playing rhythm games, creating games and
               motorcycles!
             </Text>

@@ -1,6 +1,5 @@
 import {
   Link as ChakraLink,
-  useColorMode,
   Flex,
   Button,
   Hide,
@@ -10,11 +9,11 @@ import {
   MenuItem,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import theme from "../../theme";
 import { NavbarLogo } from "./NavbarLogo";
 import { NavbarElement } from "./NavbarElement";
+import Link from "next/link";
 
 export const scrollIntoSection = (e, tagName: string) => {
   let element = document.getElementById(tagName.toLowerCase());
@@ -24,10 +23,6 @@ export const scrollIntoSection = (e, tagName: string) => {
 };
 
 export const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  // const { colorMode, toggleColorMode } = useColorMode();
-  // const isDark = colorMode === "dark";
-
   return (
     // <Flex position="fixed" alignItems={'center'} top={4} right={4}>
     <AnimatePresence>
@@ -36,7 +31,7 @@ export const Navbar = () => {
         initial={{ opacity: 0, y: -300 }}
         animate={{ opacity: 1, y: 0 }}
         w="100%"
-        px={['40px', '20px', 20, "15vw"]}
+        px={theme.spacing.main}
         py="5"
         align="center"
         justify="space-between"
@@ -47,8 +42,8 @@ export const Navbar = () => {
         <Flex alignItems={"center"}>
           <Hide below={"md"}>
             <Flex
-            // mr={4}
-            gap={4}
+              // mr={4}
+              gap={4}
             >
               <NavbarElement title={"Home"} />
               <NavbarElement title={"About"} />
@@ -69,47 +64,19 @@ export const Navbar = () => {
                 aria-label={"Menu"}
                 w={"100%"}
                 style={{ cursor: "pointer" }}
-                onClick={() => setShowMenu((prevVal) => !prevVal)}
               >
                 <HamburgerIcon />
               </MenuButton>
               <MenuList>
-                <MenuItem
-                  as={"a"}
-                  href={"/"}
-                  onClick={(e) => {
-                    scrollIntoSection(e, "home");
-                  }}
-                >
-                  Home
-                </MenuItem>
-                <MenuItem
-                  as={"a"}
-                  href={"/"}
-                  onClick={(e) => {
-                    scrollIntoSection(e, "about");
-                  }}
-                >
-                  About
-                </MenuItem>
-                <MenuItem
-                  as={"a"}
-                  href={"/"}
-                  onClick={(e) => {
-                    scrollIntoSection(e, "projects");
-                  }}
-                >
-                  Projects
-                </MenuItem>
-                <MenuItem
-                  as={"a"}
-                  href={"/"}
-                  onClick={(e) => {
-                    scrollIntoSection(e, "contact");
-                  }}
-                >
-                  Contact
-                </MenuItem>
+                {/* <ChakraLink href="/#"> */}
+                  <MenuItem>Home</MenuItem>
+                {/* </ChakraLink> */}
+                {/* <ChakraLink href="/#about"> */}
+                  <MenuItem>About</MenuItem>
+                {/* </ChakraLink> */}
+                {/* <ChakraLink href="/#projects"> */}
+                  <MenuItem>Profile</MenuItem>
+                {/* </ChakraLink> */}
               </MenuList>
             </Menu>
           </Hide>

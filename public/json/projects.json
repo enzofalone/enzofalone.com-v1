@@ -74,12 +74,14 @@
       "links": {
         "github": "https://github.com/enzofalone/memory-game"
       },
-      "description": "Little game I did for prework application for CodePath's Summer Internship for Technical Excellence. This memory game has several features such as strikes, a timer, custom sounds, images",
+      "description": "Memory game that has several features such as strikes, a timer, custom sounds, and images to practice using many of the different features vanilla JavaScript offers",
       "technologies": [
-        "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"
+        "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E",
+        "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white",
+        "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white"
       ],
       "images": [
-        "https://github.com/enzofalone/memory-game/raw/main/memorygamev2.gif"
+        "https://raw.githubusercontent.com/enzofalone/memory-game/main/memorygamev2.gif?token=GHSAT0AAAAAAB2PBKNLCMNSGLC5PF4CRVHYY3L7EFQ"
       ]
     }
   ]

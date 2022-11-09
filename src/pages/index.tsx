@@ -17,7 +17,7 @@ import { Navbar } from "../components/Navbar/Navbar";
 import { Footer } from "../components/Footer";
 import About from "../components/About";
 import theme from "../theme";
-import Projects from "../components/Project/Projects";
+import Projects from "../components/Projects/Projects";
 
 import { useEffect, useState } from "react";
 
