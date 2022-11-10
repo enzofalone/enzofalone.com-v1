@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="/navbar_icon.svg"
         />
         <title>Enzo Falone</title>
+        <meta name="description" content="Enzo Falone's Portfolio Website"/>
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>

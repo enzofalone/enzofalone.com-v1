@@ -9,11 +9,13 @@ import {
   Heading,
   CircularProgress,
   Image as ChakraImage,
+  Link as ChakraLink,
   Button,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import lodash from "lodash";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import _ from "lodash";
 
 type Props = { data };
 
@@ -21,7 +23,6 @@ type Props = { data };
 
 function ProjectItem({ data }: Props) {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [imgsLoaded, setImgsLoaded] = useState(true);
 
   return (
     <AccordionItem p={"20px"}>
@@ -29,10 +30,10 @@ function ProjectItem({ data }: Props) {
       {/* Description section */}
       {data.description ? (
         <AccordionPanel pb={4}>
-          <Heading fontSize={"2rem"} mb={"10px"}>
+          <Heading fontSize={"1.5rem"} mb={"10px"}>
             Description
           </Heading>
-          {lodash.upperFirst(data.description)}
+          <Text fontSize={"1.2rem"}>{lodash.upperFirst(data.description)}</Text>
         </AccordionPanel>
       ) : (
         <></>
@@ -40,21 +41,21 @@ function ProjectItem({ data }: Props) {
       {/* What I learned section */}
       {data.learned ? (
         <AccordionPanel pb={4}>
-          <Heading fontSize={"2rem"} mb={"10px"}>
+          <Heading fontSize={"1.5rem"} mb={"10px"}>
             What I learned
           </Heading>
-          {lodash.upperFirst(data.learned)}
+          <Text fontSize={"1.2rem"}>{lodash.upperFirst(data.learned)}</Text>
         </AccordionPanel>
       ) : (
         <></>
       )}
       {/* Screenshot gallery */}
       <AccordionPanel pb={4}>
-        <Heading fontSize={"2rem"} mb={"10px"}>
+        <Heading fontSize={"1.5rem"} mb={"10px"}>
           Screenshots
         </Heading>
         {/* gallery */}
-        {Gallery(imgsLoaded, selectedImage, data, setSelectedImage)}
+        {Gallery(selectedImage, data, setSelectedImage)}
       </AccordionPanel>
     </AccordionItem>
   );
@@ -68,18 +69,34 @@ function AccordionHeader(data: any) {
           display={"flex"}
           flex={"1"}
           flexDir={["column", "row"]}
-          alignItems={"center"}
+          // alignItems={"center"}
+
           textAlign="left"
           gap={"1rem"}
+          w={"100%"}
+          h={"100%"}
         >
           <ChakraImage maxW={"300px"} maxH={"200px"} src={data.images[0]} />{" "}
           <Flex flexDir={"column"} h={"100%"}>
-            <Text fontSize={["1rem", "1.5rem", "2rem"]}>
+            <Heading fontSize={["1rem", "1.5rem", "2rem"]}>
               {lodash.upperFirst(data.name)}
-            </Text>
+            </Heading>
             <Flex wrap={"wrap"} gap={"10px"} mt={"10px"} w={"100%"}>
               {data.technologies.map((element, idx) => {
-                return <ChakraImage src={element} />;
+                return <ChakraImage key={idx} src={element} />;
+              })}
+            </Flex>
+            <Flex wrap={"wrap"} gap={"10px"} mt={"10px"} w={"100%"}>
+              {Object.keys(data.links).map((element, idx) => {
+                return (
+                  <ChakraLink
+                    fontSize={"1.3rem"}
+                    color={"blue.300"}
+                    href={data[element]}
+                  >
+                    {_.upperFirst(element)}
+                  </ChakraLink>
+                );
               })}
             </Flex>
           </Flex>
@@ -91,7 +108,6 @@ function AccordionHeader(data: any) {
 }
 
 function Gallery(
-  imgsLoaded: boolean,
   selectedImage: number,
   data: any,
   setSelectedImage: React.Dispatch<React.SetStateAction<number>>
@@ -106,16 +122,12 @@ function Gallery(
         alignItems={"center"}
         justifyContent={"center"}
       >
-        {imgsLoaded ? (
-          <ChakraImage
-            loading={"lazy"}
-            key={selectedImage}
-            fallback={<CircularProgress isIndeterminate color="blue.300" />}
-            src={data.images[selectedImage]}
-          />
-        ) : (
-          <CircularProgress isIndeterminate color="blue.300" />
-        )}
+        <ChakraImage
+          loading={"lazy"}
+          key={selectedImage}
+          fallback={<CircularProgress isIndeterminate color="blue.300" />}
+          src={data.images[selectedImage]}
+        />
       </Flex>
       {/* Previous/Next buttons */}
       {data.images.length > 1 ? (

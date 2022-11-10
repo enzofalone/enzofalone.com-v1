@@ -49,7 +49,7 @@ const theme = extendTheme({
     section3: "#422780",
   },
   spacing: {
-    main: [2, 5, 5, "20vw"],
+    main: [0, 5, 5, "20vw"],
   },
   // todo add diferent font sizes adapted for h1,h2,p tags
   fonts,
