@@ -83,6 +83,21 @@
       "images": [
         "https://raw.githubusercontent.com/enzofalone/memory-game/main/memorygamev2.gif?token=GHSAT0AAAAAAB2PBKNLCMNSGLC5PF4CRVHYY3L7EFQ"
       ]
+    },
+    {
+      "name": "Portfolio Website",
+      "links": {
+        "github": "https://github.com/enzofalone/memory-game"
+      },
+      "description": "Personal portfolio website created to showcase myself and my projects in a more visual manner! It was created using NextJS along with Chakra UI for the main components. This website also offers mobile support!",
+      "technologies": [
+        "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+        "https://img.shields.io/badge/chakra-%234ED1C5.svg?style=for-the-badge&logo=chakraui&logoColor=white",
+        "https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue"
+      ],
+      "images": [
+        "https://github.com/enzofalone/enzofalone.com/blob/main/screenshot.png?raw=true"
+      ]
     }
   ]
 }
