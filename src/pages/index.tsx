@@ -1,18 +1,11 @@
 import {
   Link as ChakraLink,
   Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
   Image,
   Flex,
 } from "@chakra-ui/react";
-import { CheckCircleIcon, LinkIcon } from "@chakra-ui/icons";
 
 import { Hero } from "../components/Hero";
-import { Container } from "../components/Container";
-import { Main } from "../components/Main";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Footer } from "../components/Footer";
 import About from "../components/About";
