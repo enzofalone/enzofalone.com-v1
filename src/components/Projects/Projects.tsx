@@ -35,10 +35,6 @@ function Projects({}: Props) {
         flexDir={"column"}
         alignItems={["center", "flex-start"]}
       >
-        <Flex mb={"40px"}>
-          <Heading fontSize={["2rem", "3rem", "4rem"]}>Projects</Heading>
-        </Flex>
-        {/* <Divider my={10} /> */}
         <ProjectList />
       </Flex>
     </Flex>

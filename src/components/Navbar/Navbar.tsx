@@ -54,7 +54,7 @@ export const Navbar = () => {
 
           <Hide above={"md"}>
             {/* mobile */}
-            <Menu>
+            {/* <Menu>
               <MenuButton
                 ml={4}
                 py={3}
@@ -68,17 +68,17 @@ export const Navbar = () => {
                 <HamburgerIcon />
               </MenuButton>
               <MenuList>
-                {/* <ChakraLink href="/#"> */}
+                <ChakraLink href="/#">
                   <MenuItem>Home</MenuItem>
-                {/* </ChakraLink> */}
-                {/* <ChakraLink href="/#about"> */}
+                </ChakraLink>
+                <ChakraLink href="/#about">
                   <MenuItem>About</MenuItem>
-                {/* </ChakraLink> */}
-                {/* <ChakraLink href="/#projects"> */}
+                </ChakraLink>
+                <ChakraLink href="/#projects">
                   <MenuItem>Profile</MenuItem>
-                {/* </ChakraLink> */}
+                </ChakraLink>
               </MenuList>
-            </Menu>
+            </Menu> */}
           </Hide>
         </Flex>
       </Flex>

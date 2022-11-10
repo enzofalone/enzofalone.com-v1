@@ -64,7 +64,7 @@ function ProjectItem({ data }: Props) {
 function AccordionHeader(data: any) {
   return (
     <h2>
-      <AccordionButton>
+      <AccordionButton flexDir={["column", "row"]}>
         <Box
           display={"flex"}
           flex={"1"}
