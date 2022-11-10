@@ -29,7 +29,7 @@ const Index = () => {
     >
       <Navbar />
       <Hero />
-      <Image w={"100vw"} src="/first_wave0.svg" />
+      <Image w={"100vw"} src="/waves/first_wave0.svg" />
       <About />
       <Image
         transform={{ base: "rotate(180deg)" }}
@@ -37,7 +37,7 @@ const Index = () => {
         h={"100%"}
         zIndex={0}
         my={-1}
-        src="/first_wave1.svg"
+        src="/waves/first_wave1.svg"
         bgColor={theme.colors.section3}
       />
       <Projects />

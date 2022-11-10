@@ -1,12 +1,9 @@
 import { EmailIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import {
-  Box,
   Button,
-  Divider,
   Flex,
   Heading,
   Text,
-  Link as ChakraLink,
   Image as ChakraImage,
   HStack,
   Tooltip,
@@ -16,7 +13,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import theme from "../theme";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 export const Hero = () => {
-  const RESUME_LINK: string = "https://bit.ly/3FydEG0";
+  const RESUME_LINK: string = "/resume.pdf"; //"https://bit.ly/3FydEG0";
   const socialMedia: any = {
     github: "https://github.com/enzofalone",
     linkedin: "https://www.linkedin.com/in/enzofalone",
@@ -99,23 +96,10 @@ export const Hero = () => {
                   <FaLinkedin />
                 </Button>
               </Tooltip>
-              {/* <Tooltip label={socialMedia.email}>
-            <Button as={motion.a}
-              href={socialMedia.email}
-              target={"_blank"}
-              rel="noopener noreferrer"
-              colorScheme="blue">
-              <EmailIcon />
-              
-            </Button>
-            </Tooltip> */}
-              {/* <Button colorScheme="twitter" leftIcon={<Fa />}>
-              Twitter
-            </Button> */}
             </HStack>
-            {/* </Flex> */}
           </Flex>
         </Flex>
+
         {/* My face or weird image (or both) */}
         <ChakraImage
           fallback={<CircularProgress isIndeterminate color="blue.300" />}
@@ -131,7 +115,3 @@ export const Hero = () => {
     </AnimatePresence>
   );
 };
-
-// Hero.defaultProps = {
-//   title: "with-chakra-ui-typescript",
-// };
