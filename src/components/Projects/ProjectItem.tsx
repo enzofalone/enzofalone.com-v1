@@ -93,6 +93,8 @@ function AccordionHeader(data: any) {
                     fontSize={"1.3rem"}
                     color={"blue.300"}
                     href={data[element]}
+                    target={"_blank"}
+                    rel="noopener noreferrer"
                   >
                     {_.upperFirst(element)}
                   </ChakraLink>

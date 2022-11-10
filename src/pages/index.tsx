@@ -20,7 +20,6 @@ import theme from "../theme";
 import Projects from "../components/Projects/Projects";
 
 const Index = () => {
-
   return (
     <Flex
       height="100vh"
@@ -43,7 +42,17 @@ const Index = () => {
       />
       <Projects />
       <Footer>
-        <Text>Footer</Text>
+        <Text fontSize={"1.2rem"}>
+          {new Date().getFullYear()} &copy; Created by{" "}
+          <ChakraLink
+            href={"https://github.com/enzofalone"}
+            target={"_blank"}
+            rel="noopener noreferrer"
+            textDecoration={"underline"}
+          >
+            Enzo Falone
+          </ChakraLink>
+        </Text>
       </Footer>
     </Flex>
   );

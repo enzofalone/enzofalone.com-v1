@@ -9,6 +9,8 @@ Portfolio website to briefly showcase my projects
 - Personal blog
 
 ## Technologies used:
+
+- Netlify
 - Next.js
 - Chakra UI
 - Framer Motion
