@@ -8,6 +8,7 @@ import {
   HStack,
   Tooltip,
   CircularProgress,
+  useToast,
 } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import theme from "../theme";
@@ -17,7 +18,19 @@ export const Hero = () => {
   const socialMedia: any = {
     github: "https://github.com/enzofalone",
     linkedin: "https://www.linkedin.com/in/enzofalone",
-    email: "mailto:enzofalone123@gmail.com",
+    email: "enzofalone123@gmail.com",
+  };
+
+  const toast = useToast();
+
+  const showEmailToast = () => {
+    toast({
+      title: "Copied to clipboard!",
+      description: `now ${socialMedia.email} is copied into your clipboard!`,
+      status: "success",
+      duration: 5000,
+      isClosable: true,
+    });
   };
 
   return (
@@ -94,6 +107,17 @@ export const Hero = () => {
                   colorScheme="blue"
                 >
                   <FaLinkedin />
+                </Button>
+              </Tooltip>
+              <Tooltip label={socialMedia.email}>
+                <Button
+                  onClick={() => {
+                    navigator.clipboard.writeText(socialMedia.email);
+                    showEmailToast();
+                  }}
+                  colorScheme="blue"
+                >
+                  <EmailIcon />
                 </Button>
               </Tooltip>
             </HStack>
