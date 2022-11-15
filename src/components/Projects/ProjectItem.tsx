@@ -90,6 +90,7 @@ function AccordionHeader(data: any) {
               {Object.keys(data.links).map((element, idx) => {
                 return (
                   <ChakraLink
+                    key={idx}
                     fontSize={"1.3rem"}
                     color={"blue.300"}
                     href={data[element]}

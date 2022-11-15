@@ -9,18 +9,22 @@ import {
   Tooltip,
   CircularProgress,
   useToast,
+  Link as ChakraLink,
 } from "@chakra-ui/react";
+import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import { AnimatePresence, motion } from "framer-motion";
+import { FC } from "react";
 import theme from "../theme";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-export const Hero = () => {
-  const RESUME_LINK: string = "/resume.pdf"; //"https://bit.ly/3FydEG0";
-  const socialMedia: any = {
-    github: "https://github.com/enzofalone",
-    linkedin: "https://www.linkedin.com/in/enzofalone",
-    email: "enzofalone123@gmail.com",
-  };
 
+const RESUME_LINK: string = "/resume.pdf";
+
+const socialMedia: any = {
+  github: "https://github.com/enzofalone",
+  linkedin: "https://www.linkedin.com/in/enzofalone",
+  email: "mailto:enzofalone123@gmail.com",
+};
+
+export const Hero = () => {
   const toast = useToast();
 
   const showEmailToast = () => {
@@ -42,23 +46,20 @@ export const Hero = () => {
         mt={10}
         bgColor={theme.colors.section1}
         px={theme.spacing.main}
-        w={"100%"}
-        h={"100%"}
         id={"home"}
-        justifyContent="space-between"
+        justifyContent={["none", "space-between"]}
         alignItems="center"
         flexDir={["column", "row", "row", "row"]}
-        height="100vh"
         bgGradient="linear(to-l, heroGradientStart, heroGradientEnd)"
         bgClip="text"
       >
-        <Flex flexDir={"column"} gap={"1rem"} mb={[5, 0, 0]}>
+        <Flex flexDir={"column"} mb={[5, 0, 0]}>
           <Heading fontSize={["3rem", "4rem", "5rem"]}>
             Enzo
             <br />
             Falone
           </Heading>
-          <Text fontSize={["1rem", "1.5rem", "2rem"]}>
+          <Text fontSize={["1rem", "1.5rem", "2rem"]} m={0}>
             Aspiring Software Engineer
           </Text>
           <Flex flexDir={"column"} w={["100%", "100%", "70%", "60%"]}>
@@ -80,46 +81,27 @@ export const Hero = () => {
               Resume <ExternalLinkIcon ml="10px" />
             </Button>
             {/* social media buttons */}
-            {/* <Flex flexDir={'row'} justifyContent={'space-between'}> */}
             <HStack
               w={"100%"}
-              // justify={"space-between"}
               justifyContent={["center", "flex-start"]}
               gap={2}
             >
-              <Tooltip label={socialMedia.github}>
-                <Button
-                  as={motion.a}
-                  href={socialMedia.github}
-                  target={"_blank"}
-                  rel="noopener noreferrer"
-                  colorScheme="blue"
-                >
-                  <FaGithub />
-                </Button>
-              </Tooltip>
-              <Tooltip label={socialMedia.linkedin}>
-                <Button
-                  as={motion.a}
-                  href={socialMedia.linkedin}
-                  target={"_blank"}
-                  rel="noopener noreferrer"
-                  colorScheme="blue"
-                >
-                  <FaLinkedin />
-                </Button>
-              </Tooltip>
-              <Tooltip label={socialMedia.email}>
-                <Button
-                  onClick={() => {
-                    navigator.clipboard.writeText(socialMedia.email);
-                    showEmailToast();
-                  }}
-                  colorScheme="blue"
-                >
-                  <EmailIcon />
-                </Button>
-              </Tooltip>
+              <SocialMediaIcon
+                label={"enzofalone"}
+                mediaLink={socialMedia.github}
+                imgSrc={"/icons/github.svg"}
+              />
+              <SocialMediaIcon
+                label={"Enzo Falone"}
+                mediaLink={socialMedia.linkedin}
+                imgSrc={"/icons/linkedin.svg"}
+              />
+
+              <SocialMediaIcon
+                label={"enzofalone123@gmail.com"}
+                mediaLink={socialMedia.email}
+                imgSrc={"/icons/gmail.svg"}
+              />
             </HStack>
           </Flex>
         </Flex>
@@ -137,5 +119,31 @@ export const Hero = () => {
         ></ChakraImage>
       </Flex>
     </AnimatePresence>
+  );
+};
+
+interface SocialMediaIconProps {
+  label: string;
+  mediaLink: string;
+  imgSrc: string;
+}
+
+const SocialMediaIcon: FC<SocialMediaIconProps> = ({
+  label,
+  mediaLink,
+  imgSrc,
+}) => {
+  return (
+    <Tooltip label={label}>
+      <ChakraLink
+        href={mediaLink}
+        target={"_blank"}
+        as={motion.a}
+        whileHover={{ scale: 1.1 }}
+        rel="noopener noreferrer"
+      >
+        <ChakraImage w={"3rem"} src={imgSrc} />
+      </ChakraLink>
+    </Tooltip>
   );
 };

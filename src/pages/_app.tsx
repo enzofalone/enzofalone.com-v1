@@ -11,12 +11,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link
           rel="icon"
-          type="image/png"
+          type="image/svg"
           sizes="32x32"
           href="/navbar_icon.svg"
         />
         <title>Enzo Falone</title>
-        <meta name="description" content="Enzo Falone's Portfolio Website"/>
+        <meta name="description" content="Enzo Falone's Portfolio Website" />
       </Head>
       <Component {...pageProps} />
     </ChakraProvider>

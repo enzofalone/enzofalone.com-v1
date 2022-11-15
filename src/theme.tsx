@@ -49,15 +49,15 @@ const theme = extendTheme({
     section3: "#422780",
   },
   spacing: {
-    main: [0, 5, 5, "20vw"],
+    main: ['15px', '25px', '100px', "20vw"],
   },
   // todo add diferent font sizes adapted for h1,h2,p tags
   fonts,
   breakpoints: {
     sm: "40em",
-    md: "52em",
-    lg: "64em",
-    xl: "80em",
+    md: "60em",
+    lg: "80em",
+    xl: "100em",
   },
 });
 
