@@ -20,8 +20,8 @@ export const scrollIntoSection = (e, tagName: string) => {
   let element = document.getElementById(tagName.toLowerCase());
   e.preventDefault();
   setTimeout(() => {
-    element && element.scrollIntoView({ behavior: "smooth" });
-  }, 0);
+    element && element.scrollIntoView({ block: "nearest", behavior: 'smooth'});
+  }, 100);
 };
 
 export const Navbar = () => {
@@ -29,7 +29,7 @@ export const Navbar = () => {
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-
+  const menuElements = ["home", "about", "projects", "contact"];
   let navbarStyle = {};
 
   const handleScroll = () => {
@@ -62,7 +62,7 @@ export const Navbar = () => {
         as={motion.div}
         initial={{ opacity: 0, y: -300 }}
         animate={{ opacity: 1, y: 0 }}
-        zIndex={4}
+        zIndex={'10'}
         px={theme.spacing.main}
         py="5"
         justify="space-between"
@@ -97,38 +97,31 @@ export const Navbar = () => {
                 >
                   <HamburgerIcon />
                 </MenuButton>
-                {showMobileMenu ? (
-                  <Flex
-                    top={`${NAVBAR_HEIGHT}px`}
-                    left={0}
-                    w={"100%"}
-                    h={`calc(100vh - ${NAVBAR_HEIGHT}px) `}
-                    position={"fixed"}
-                    bgColor={theme.colors.sectionBackground}
-                    zIndex={"5"}
-                  >
-                    <Flex w={"100%"} flexDir={"column"} h={"100%"}>
-                      <NavbarMobileElement
-                        setShowMobileMenu={setShowMobileMenu}
-                        name={"home"}
-                      />
-                      <NavbarMobileElement
-                        setShowMobileMenu={setShowMobileMenu}
-                        name={"about"}
-                      />
-                      <NavbarMobileElement
-                        setShowMobileMenu={setShowMobileMenu}
-                        name={"projects"}
-                      />
-                      <NavbarMobileElement
-                        setShowMobileMenu={setShowMobileMenu}
-                        name={"contact"}
-                      />
+                  {showMobileMenu ? (
+                    <Flex
+                      top={`${NAVBAR_HEIGHT}px`}
+                      left={0}
+                      w={"100%"}
+                      h={`calc(100vh - ${NAVBAR_HEIGHT}px) `}
+                      position={"fixed"}
+                      bgColor={theme.colors.sectionBackground}
+                      zIndex={"5"}
+                    >
+                      <Flex w={"100%"} flexDir={"column"} h={"100%"}>
+                        {menuElements.map((name, idx) => {
+                          return (
+                            <NavbarMobileElement
+                              key={idx}
+                              setShowMobileMenu={setShowMobileMenu}
+                              name={name}
+                            />
+                          );
+                        })}
+                      </Flex>
                     </Flex>
-                  </Flex>
-                ) : (
-                  <></>
-                )}
+                  ) : (
+                    <></>
+                  )}
               </Menu>
             </Flex>
           </Hide>

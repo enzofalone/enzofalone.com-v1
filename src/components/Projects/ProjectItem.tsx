@@ -96,6 +96,7 @@ function AccordionHeader(data: any) {
                     href={data[element]}
                     target={"_blank"}
                     rel="noopener noreferrer"
+                    zIndex={'3'}
                   >
                     {_.upperFirst(element)}
                   </ChakraLink>
