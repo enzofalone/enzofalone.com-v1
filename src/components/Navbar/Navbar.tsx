@@ -1,19 +1,15 @@
+import { HamburgerIcon } from "@chakra-ui/icons";
 import {
-  Link as ChakraLink,
-  Flex,
+  Button, Container, Flex,
   Hide,
   Menu,
-  MenuButton,
-  Button,
-  MenuList,
-  Container,
+  MenuButton
 } from "@chakra-ui/react";
-import { motion, AnimatePresence } from "framer-motion";
-import theme from "../../theme";
-import { NavbarLogo } from "./NavbarLogo";
-import { NavbarElement } from "./NavbarElement";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import theme from "../../theme";
+import { NavbarElement } from "./NavbarElement";
+import { NavbarLogo } from "./NavbarLogo";
 import NavbarMobileElement from "./NavbarMobileElement";
 
 export const scrollIntoSection = (e, tagName: string) => {

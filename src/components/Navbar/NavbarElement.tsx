@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { Link as ChakraLink } from "@chakra-ui/react";
-import { scrollIntoSection } from "./Navbar";
+import { motion } from "framer-motion";
 import _ from "lodash";
+import { scrollIntoSection } from "./Navbar";
 
 interface NavbarItem {
   title: string;

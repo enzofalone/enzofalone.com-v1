@@ -1,21 +1,20 @@
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import {
-  AccordionItem,
-  Text,
   AccordionButton,
   AccordionIcon,
+  AccordionItem,
   AccordionPanel,
   Box,
+  Button,
+  CircularProgress,
   Flex,
   Heading,
-  CircularProgress,
   Image as ChakraImage,
   Link as ChakraLink,
-  Button,
+  Text,
 } from "@chakra-ui/react";
+import { default as lodash, default as _ } from "lodash";
 import { useState } from "react";
-import lodash from "lodash";
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import _ from "lodash";
 
 type Props = { data };
 
@@ -96,7 +95,7 @@ function AccordionHeader(data: any) {
                     href={data[element]}
                     target={"_blank"}
                     rel="noopener noreferrer"
-                    zIndex={'3'}
+                    zIndex={"3"}
                   >
                     {_.upperFirst(element)}
                   </ChakraLink>
@@ -137,7 +136,9 @@ function Gallery(
       {data.images.length > 1 ? (
         <>
           <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
-            {selectedImage + 1} of {data.images.length}
+            <Text fontWeight={1000} fontSize={"1.5rem"}>
+              {selectedImage + 1} of {data.images.length}
+            </Text>
           </Flex>
           <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
             <Button

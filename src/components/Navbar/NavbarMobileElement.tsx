@@ -1,7 +1,6 @@
 import { Button, Text } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import _ from "lodash";
-import React from "react";
 import { scrollIntoSection } from "./Navbar";
 
 type Props = {};

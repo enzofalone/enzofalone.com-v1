@@ -6,8 +6,6 @@ import theme from "../theme";
 type Props = {};
 
 export default function About({}: Props) {
-  const [selectedSection, setSelectedSection] = useState(0);
-
   return (
     <Flex
       w={"100vw"}
@@ -34,7 +32,9 @@ export default function About({}: Props) {
         >
           <Flex>
             <Heading fontSize={["2rem", "3rem", "4rem"]}>
-              About<br/>Me
+              About
+              <br />
+              Me
             </Heading>
           </Flex>
           <Divider my={10} />

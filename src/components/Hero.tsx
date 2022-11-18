@@ -1,17 +1,16 @@
-import { EmailIcon, ExternalLinkIcon } from "@chakra-ui/icons";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Button,
+  CircularProgress,
   Flex,
   Heading,
-  Text,
-  Image as ChakraImage,
   HStack,
-  Tooltip,
-  CircularProgress,
-  useToast,
+  Image as ChakraImage,
   Link as ChakraLink,
+  Text,
+  Tooltip,
+  useToast,
 } from "@chakra-ui/react";
-import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import { AnimatePresence, motion } from "framer-motion";
 import { FC } from "react";
 import theme from "../theme";
