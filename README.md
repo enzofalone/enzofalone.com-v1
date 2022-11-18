@@ -1,4 +1,5 @@
 # [enzofalone.com](https://www.enzofalone.com)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c5bc1952-54b4-4c23-8694-04c1861df5a5/deploy-status)](https://app.netlify.com/sites/earnest-toffee-11d91b/deploys)
 
 Portfolio website to briefly showcase my projects
 
