@@ -27,7 +27,7 @@ function ProjectList({}: Props) {
       py={"30px"}
       px={["20px", "30px", "40px"]}
     >
-      <Heading fontSize={["2rem", "3rem", "4rem"]} pb={'30px'}>Projects</Heading>
+      <Heading fontSize={['2rem', '2.5rem']} mb={'30px'}>Projects</Heading>
       <Accordion allowMultiple>
         {projectsJson.projects.map((element, idx) => {
           return <ProjectItem key={idx} data={element} />;
