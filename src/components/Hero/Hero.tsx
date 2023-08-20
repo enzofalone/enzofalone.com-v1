@@ -75,7 +75,7 @@ export const Hero = () => {
         {/* My face or weird image (or both) */}
         <ChakraImage
           fallback={<CircularProgress isIndeterminate color="blue.300" />}
-          src="https://avatars.githubusercontent.com/u/20959424?v=4"
+          src="https://media.licdn.com/dms/image/C4E03AQFJNP4LPLHKcQ/profile-displayphoto-shrink_800_800/0/1659799994698?e=1698278400&v=beta&t=0hzbX5XsvRXTNH9y0k_lqC-kLVyNklO6vBwbdG_vLqc"
           w={['250px']}
           h={['250px']}
           borderRadius={'9999px'}

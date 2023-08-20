@@ -24,8 +24,8 @@ export default function About({}: Props) {
           p={10}
           borderRadius={'10px'}
         >
-          <Heading fontSize={['2rem', '2.5rem']}>About Me</Heading>
-          <Divider my={'3'} />
+          <Heading fontSize={['2rem', '2.5rem']} mb={'30px'}>About Me</Heading>
+          <Divider mb={'30px'} />
           <Flex flexDir={'column'}>
             <Text fontSize={'xl'}>
               My name is Enzo Falone and I was born in Venezuela. I came to the

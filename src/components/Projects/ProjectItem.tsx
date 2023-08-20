@@ -1,4 +1,4 @@
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import {
   AccordionButton,
   AccordionIcon,
@@ -12,9 +12,9 @@ import {
   Image as ChakraImage,
   Link as ChakraLink,
   Text,
-} from "@chakra-ui/react";
-import { default as lodash, default as _ } from "lodash";
-import { useState } from "react";
+} from '@chakra-ui/react';
+import { default as lodash, default as _ } from 'lodash';
+import { useState } from 'react';
 
 type Props = { data };
 
@@ -24,15 +24,15 @@ function ProjectItem({ data }: Props) {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
-    <AccordionItem p={"20px"}>
+    <AccordionItem p={'20px'}>
       {AccordionHeader(data)}
       {/* Description section */}
       {data.description ? (
         <AccordionPanel pb={4}>
-          <Heading fontSize={"1.5rem"} mb={"10px"}>
+          <Heading fontSize={'1.5rem'} mb={'10px'}>
             Description
           </Heading>
-          <Text fontSize={"1.2rem"}>{lodash.upperFirst(data.description)}</Text>
+          <Text fontSize={'1.2rem'}>{lodash.upperFirst(data.description)}</Text>
         </AccordionPanel>
       ) : (
         <></>
@@ -40,17 +40,17 @@ function ProjectItem({ data }: Props) {
       {/* What I learned section */}
       {data.learned ? (
         <AccordionPanel pb={4}>
-          <Heading fontSize={"1.5rem"} mb={"10px"}>
+          <Heading fontSize={'1.5rem'} mb={'10px'}>
             What I learned
           </Heading>
-          <Text fontSize={"1.2rem"}>{lodash.upperFirst(data.learned)}</Text>
+          <Text fontSize={'1.2rem'}>{lodash.upperFirst(data.learned)}</Text>
         </AccordionPanel>
       ) : (
         <></>
       )}
       {/* Screenshot gallery */}
       <AccordionPanel pb={4}>
-        <Heading fontSize={"1.5rem"} mb={"10px"}>
+        <Heading fontSize={'1.5rem'} mb={'10px'}>
           Screenshots
         </Heading>
         {/* gallery */}
@@ -63,39 +63,39 @@ function ProjectItem({ data }: Props) {
 function AccordionHeader(data: any) {
   return (
     <h2>
-      <AccordionButton flexDir={["column", "row"]}>
+      <AccordionButton flexDir={['column', 'row']}>
         <Box
-          display={"flex"}
-          flex={"1"}
-          flexDir={["column", "row"]}
+          display={'flex'}
+          flex={'1'}
+          flexDir={['column', 'row']}
           // alignItems={"center"}
 
           textAlign="left"
-          gap={"1rem"}
-          w={"100%"}
-          h={"100%"}
+          gap={'1rem'}
+          w={'100%'}
+          h={'100%'}
         >
-          <ChakraImage maxW={"300px"} maxH={"200px"} src={data.images[0]} />{" "}
-          <Flex flexDir={"column"} h={"100%"}>
-            <Heading fontSize={["1rem", "1.5rem", "2rem"]}>
+          <ChakraImage maxW={'300px'} maxH={'200px'} src={data.images[0]} />{' '}
+          <Flex flexDir={'column'} h={'100%'}>
+            <Heading fontSize={['1rem', '1.5rem', '2rem']}>
               {lodash.upperFirst(data.name)}
             </Heading>
-            <Flex wrap={"wrap"} gap={"10px"} mt={"10px"} w={"100%"}>
+            <Flex wrap={'wrap'} gap={'10px'} mt={'10px'} w={'100%'}>
               {data.technologies.map((element, idx) => {
                 return <ChakraImage key={idx} src={element} />;
               })}
             </Flex>
-            <Flex wrap={"wrap"} gap={"10px"} mt={"10px"} w={"100%"}>
+            <Flex wrap={'wrap'} gap={'10px'} mt={'10px'} w={'100%'}>
               {Object.keys(data.links).map((element, idx) => {
                 return (
                   <ChakraLink
                     key={idx}
-                    fontSize={"1.3rem"}
-                    color={"blue.300"}
+                    fontSize={'1.3rem'}
+                    color={'blue.300'}
                     href={data[element]}
-                    target={"_blank"}
+                    target={'_blank'}
                     rel="noopener noreferrer"
-                    zIndex={"3"}
+                    zIndex={'3'}
                   >
                     {_.upperFirst(element)}
                   </ChakraLink>
@@ -117,16 +117,16 @@ function Gallery(
 ) {
   return (
     // Images
-    <Flex flexDir={"column"} alignItems={"center"} justifyContent={"center"}>
+    <Flex flexDir={'column'} alignItems={'center'} justifyContent={'center'}>
       <Flex
-        overflow={"hidden"}
-        w={"100%"}
-        h={"100%"}
-        alignItems={"center"}
-        justifyContent={"center"}
+        overflow={'hidden'}
+        w={'100%'}
+        h={'100%'}
+        alignItems={'center'}
+        justifyContent={'center'}
       >
         <ChakraImage
-          loading={"lazy"}
+          loading={'lazy'}
           key={selectedImage}
           fallback={<CircularProgress isIndeterminate color="blue.300" />}
           src={data.images[selectedImage]}
@@ -135,12 +135,12 @@ function Gallery(
       {/* Previous/Next buttons */}
       {data.images.length > 1 ? (
         <>
-          <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
-            <Text fontWeight={1000} fontSize={"1.5rem"}>
+          <Flex alignItems={'center'} gap={'5px'} mt={'1rem'}>
+            <Text fontWeight={1000} fontSize={'1.5rem'}>
               {selectedImage + 1} of {data.images.length}
             </Text>
           </Flex>
-          <Flex alignItems={"center"} gap={"5px"} mt={"1rem"}>
+          <Flex alignItems={'center'} gap={'5px'} mt={'1rem'}>
             <Button
               leftIcon={<ArrowBackIcon />}
               colorScheme="teal"
@@ -165,7 +165,7 @@ function Gallery(
             >
               Next
             </Button>
-          </Flex>{" "}
+          </Flex>{' '}
         </>
       ) : (
         <></>

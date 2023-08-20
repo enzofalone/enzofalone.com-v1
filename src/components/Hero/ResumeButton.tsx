@@ -3,7 +3,7 @@ import { Button } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import React from 'react';
 
-const RESUME_LINK: string = '/resume.pdf';
+const RESUME_LINK: string = 'https://docs.google.com/document/d/1WkkNf5YDsDhgbdJ7gUb-p9VhklDdLZ1C/edit?usp=sharing&ouid=117322661560044784923&rtpof=true&sd=true';
 
 type Props = {};
 
