@@ -6,7 +6,7 @@ import {
   Container,
 } from "@chakra-ui/react";
 
-import { Hero } from "../components/Hero";
+import { Hero } from "../components/Hero/Hero";
 import { Navbar } from "../components/Navbar/Navbar";
 import { Footer } from "../components/Footer";
 import About from "../components/About";
