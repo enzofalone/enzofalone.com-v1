@@ -27,8 +27,8 @@ dependencies:
     specifier: ^4.17.21
     version: 4.17.21
   lowdb:
-    specifier: ^5.0.5
-    version: 5.0.5
+    specifier: ^6.1.0
+    version: 6.1.0
   next:
     specifier: latest
     version: 13.4.6(react-dom@18.2.0)(react@18.2.0)
@@ -1588,11 +1588,11 @@ packages:
       js-tokens: 4.0.0
     dev: false
 
-  /lowdb@5.0.5:
-    resolution: {integrity: sha512-7EWKmIMhNKA8TXFhL8t0p6N2LC53l3ZqsWQGSksGhhjrcms9rbKlyrAh2PzSGK5v0KPJ2W5VItBnC3NDRzOnzQ==}
-    engines: {node: '>=14.16'}
+  /lowdb@6.1.0:
+    resolution: {integrity: sha512-jED4i1iWNf3OL1IcUMS7tD3n1L+vlKMTdXhFFj6rCQBdhkITt4j5i9us0wjoHkHhS2l2Od1QChT1e8XEZ0V+7w==}
+    engines: {node: '>=16'}
     dependencies:
-      steno: 3.0.0
+      steno: 3.1.0
     dev: false
 
   /nanoid@3.3.6:
@@ -1865,9 +1865,9 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /steno@3.0.0:
-    resolution: {integrity: sha512-uZtn7Ht9yXLiYgOsmo8btj4+f7VxyYheMt8g6F1ANjyqByQXEE2Gygjgenp3otHH1TlHsS4JAaRGv5wJ1wvMNw==}
-    engines: {node: '>=14.16'}
+  /steno@3.1.0:
+    resolution: {integrity: sha512-U9mIkOthSBoLxa+4QAXv0aDDHeLn6merFMkjSblSz+WgezKQ0EkS1znRY6hNBZz3kGDm/0ZaP+E+/1X1ho37IQ==}
+    engines: {node: '>=16'}
     dev: false
 
   /streamsearch@1.1.0:
